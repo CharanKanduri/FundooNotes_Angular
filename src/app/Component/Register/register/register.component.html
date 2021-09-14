@@ -1,1 +1,63 @@
-<p>register works!</p>
+<div class="register_container">
+    <mat-card class="register_card">
+        <div class="register_inputs">
+            <mat-card-title>
+                <span style="color: #FBBC05;">F</span>
+                <span style="color: #FBBC05;">u</span>
+                <span style="color: #FBBC05;">n</span>
+                <span style="color: #FBBC05;">d</span>
+                <span style="color: #FBBC05;">o</span>
+                <span style="color: #FBBC05;">o</span>
+            </mat-card-title>
+            <h2>Create your Fundoo Notes Account</h2>
+
+            <form class="register-form">
+                <div class="inline-inputs">
+                    <mat-form-field appearance="outline">
+                        <mat-label>First name</mat-label>
+                        <input type="text" matInput id="firstName">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Last name</mat-label>
+                        <input type="text" matInput id="lastName">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline" class="form-input">
+                        <mat-label>User name</mat-label>
+                        <input type="email" matInput id="email">
+                        <mat-hint>You can use letters, numbers &amp; periods</mat-hint>
+                    </mat-form-field>
+                </div>
+
+                <div class="inline-inputs">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input type="password" matInput id="password">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirm</mat-label>
+                        <input type="password" matInput id="confirmPassword">
+                    </mat-form-field>
+                    <mat-hint style="margin-top: -13px;margin-left: 11px;">Use 8 or more characters with a mix of
+                        letters, numbers
+                        &amp; symbols</mat-hint>
+                </div>
+                <div>
+                    <mat-checkbox id="showPassword" style="margin-left: 3px;">Show Password</mat-checkbox>
+                </div>
+                <div class="button_container">
+                    <button mat-button color="primary">Sign in instead</button>
+                    <button mat-raised-button color="primary">Register</button>
+                </div>
+
+            </form>
+        </div>
+        <div class="register_image_container">
+            <img src="../../../../assets/images/account.svg" alt="Image"/>
+            <p>FundooNotes to make your notes handy </p>
+        </div>
+    </mat-card>
+</div>
