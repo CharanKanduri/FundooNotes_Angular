@@ -8,6 +8,7 @@ import {FormControl,FormGroup,Validators} from '@angular/forms'
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  fieldTextType!: boolean;
   registerForm !: FormGroup;
   ngOnInit() {
     this.registerForm = new FormGroup({
@@ -17,6 +18,9 @@ export class RegisterComponent implements OnInit {
     'password':new FormControl('',[Validators.required, Validators.pattern('^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!*@#$%^&+=]).*$'),Validators.minLength(8)]),
     'conformpassword': new FormControl('',Validators.required)  
   });
+}
+toggleFieldTextType() {
+  this.fieldTextType = !this.fieldTextType;
 }
 getErrorMessage(inputName:string) {
   let minLen = inputName=="password"?8:3;

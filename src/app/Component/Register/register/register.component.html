@@ -25,6 +25,7 @@
                         <mat-error *ngIf="registerForm.controls['lastName'].invalid" class="alert-message">Last Name is Invalid</mat-error>
                     </mat-form-field>
                 </div>
+
                 <div>
                     <mat-form-field appearance="outline" class="form-input">
                         <mat-label>User name</mat-label>
@@ -37,19 +38,19 @@
                 <div class="inline-inputs">
                     <mat-form-field appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input formControlName="password" type="password" matInput id="password" required>
+                        <input [type]="fieldTextType ? 'text' : 'password'" formControlName="password"  matInput id="password" required>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline">
                         <mat-label>Confirm</mat-label>
-                        <input formControlName="conformpassword" type="password" matInput id="conformpassword" required>
+                        <input [type]="fieldTextType ? 'text' : 'password'" formControlName="conformpassword" matInput id="conformpassword" required>
                     </mat-form-field>
                     <mat-hint style="margin-top: -13px;margin-left: 11px;">Use 8 or more characters with a mix of
                         letters, numbers
                         &amp; symbols</mat-hint>
                 </div>
                 <div>
-                    <mat-checkbox id="showPassword" style="margin-left: 3px;">Show Password</mat-checkbox>
+                    <mat-checkbox id="showPassword" style="margin-left: 3px;" (click) ="toggleFieldTextType()">Show Password</mat-checkbox>
                 </div>
                 <div class="button_container">
                     <button mat-button color="primary">Sign in instead</button>
