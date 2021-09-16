@@ -1,63 +1,41 @@
-<div class="register_container">
-    <mat-card class="register_card">
-        <div class="register_inputs">
-            <mat-card-title>
-                <span style="color: #FBBC05;">F</span>
-                <span style="color: #FBBC05;">u</span>
-                <span style="color: #FBBC05;">n</span>
-                <span style="color: #FBBC05;">d</span>
-                <span style="color: #FBBC05;">o</span>
-                <span style="color: #FBBC05;">o</span>
-            </mat-card-title>
-            <h2>Create your Fundoo Notes Account</h2>
+<div class="login_container">
+    <mat-card class="login_card">
+      <div class="login_inputs">
+        <mat-card-title>
+          <span style="color: #4285F4;">F</span>
+          <span style="color: #EA4335;">u</span>
+          <span style="color: #FBBC05;">n</span>
+          <span style="color: #4285F4;">d</span>
+          <span style="color: #34A853;">o</span>
+          <span style="color: #EB4E41;">o</span>
+        </mat-card-title>
+        <h2>Sign in</h2>
+        <h3>Use your Fundoo Notes Account</h3>
+  
+        <form class="login-form">
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>User name</mat-label>
+              <input type="email" matInput id="email">
+            </mat-form-field>
+          </div>
+  
+          <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input [type]="fieldTextType ? 'text' : 'password'" matInput id="password" required>
 
-            <form class="register-form">
-                <div class="inline-inputs">
-                    <mat-form-field appearance="outline">
-                        <mat-label>First name</mat-label>
-                        <input type="text" matInput id="firstName">
-                    </mat-form-field>
-
-                    <mat-form-field appearance="outline">
-                        <mat-label>Last name</mat-label>
-                        <input type="text" matInput id="lastName">
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field appearance="outline" class="form-input">
-                        <mat-label>User name</mat-label>
-                        <input type="email" matInput id="email">
-                        <mat-hint>You can use letters, numbers &amp; periods</mat-hint>
-                    </mat-form-field>
-                </div>
-
-                <div class="inline-inputs">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Password</mat-label>
-                        <input type="password" matInput id="password">
-                    </mat-form-field>
-
-                    <mat-form-field appearance="outline">
-                        <mat-label>Confirm</mat-label>
-                        <input type="password" matInput id="confirmPassword">
-                    </mat-form-field>
-                    <mat-hint style="margin-top: -13px;margin-left: 11px;">Use 8 or more characters with a mix of
-                        letters, numbers
-                        &amp; symbols</mat-hint>
-                </div>
-                <div>
-                    <mat-checkbox id="showPassword" style="margin-left: 3px;">Show Password</mat-checkbox>
-                </div>
-                <div class="button_container">
-                    <button mat-button color="primary">Sign in instead</button>
-                    <button mat-raised-button color="primary">Register</button>
-                </div>
-
-            </form>
-        </div>
-        <div class="register_image_container">
-            <img src="../../../../assets/images/account.svg" alt="Image"/>
-            <p>FundooNotes to make your notes handy </p>
-        </div>
+            <mat-checkbox id="showPassword" style="margin-left: 3px;" (click) ="toggleFieldTextType()">Show Password</mat-checkbox>
+            </mat-form-field>
+            <br>
+            <a href="#" class="forget_password">Forgot Password?</a>
+          </div>
+          <div class="button_container">
+            <button [routerLink]="['/register']" mat-button color="primary">Create Account</button>
+            <button mat-raised-button color="primary">login</button>
+          </div>
+  
+        </form>
+      </div>
     </mat-card>
-</div>
+  </div>
