@@ -27,7 +27,7 @@
               <input [type]="fieldTextType ? 'text' : 'password'" matInput id="password" formControlName ="password" required>
               <mat-error *ngIf="LoginForm.controls['password'].invalid">value is required</mat-error>
             </mat-form-field>
-          <mat-checkbox id="showPassword" style="margin-right: 150px;" (click) ="toggleFieldTextType()">Show Password</mat-checkbox>
+          <mat-checkbox class="check-box" id="showPassword" style="margin-right: 150px;" (click) ="toggleFieldTextType()">Show Password</mat-checkbox>
           <br>
           <br>
           <br>

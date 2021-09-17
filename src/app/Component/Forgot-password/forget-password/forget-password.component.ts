@@ -20,10 +20,10 @@ export class ForgetPasswordComponent implements OnInit {
   }
   forgetPassword()
   {
-    console.log("hello");
+    
     this.userService.ForgetPassword(this.ForgetPasswordForm.value.email)
     .subscribe((result:any)=>{
-      localStorage.setItem('token',result.data);
+      localStorage.setItem('token',result.token);
       localStorage.setItem('email',this.ForgetPasswordForm.value.email);
       this.snackBar.open(`${result.message}`, '', {
           duration: 3000,
