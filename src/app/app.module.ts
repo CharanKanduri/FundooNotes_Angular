@@ -12,13 +12,16 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import { LoginComponent } from './Component/Login/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ForgetPasswordComponent } from './Component/Forgot-password/forget-password/forget-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ForgetPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatCheckboxModule,
     MatButtonModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    MatSnackBarModule
     
   ],
   providers: [],
