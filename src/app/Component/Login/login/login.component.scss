@@ -72,17 +72,21 @@ $hintSize:12px;
         }
         
     }
-    @media only screen and (max-width: 800px) {
-        .register_card
+    @media only screen and (max-width: 880px) {
+        .login_card
         {
             width: 40%;
         }
-    
-        .register_card
+        .login_image_container
+        {
+            display: none!important;
+            
+        }
+        .login_card
         {
             flex-direction: column;
         }
-        .register_inputs
+        .login_inputs
         {
             width: 100%!important;
         }
@@ -98,7 +102,7 @@ $hintSize:12px;
             width: 90%!important;
         }
     }
-    @media only screen and (max-width: 800px) {
+    @media only screen and (max-width: 500px) {
         .register_card
         {
             width: 100%;
