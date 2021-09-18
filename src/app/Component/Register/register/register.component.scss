@@ -90,5 +90,42 @@ $hintSize:12px;
         }
         
     }
+    @media only screen and (max-width: 880px) {
+        .register_card
+        {
+            width: 40%;
+        }
+        .register_image_container
+        {
+            display: none!important;
+            
+        }
+        .register_card
+        {
+            flex-direction: column;
+        }
+        .register_inputs
+        {
+            width: 100%!important;
+        }
+        mat-form-field{
+            width: 90%;
+        }
+        .form-input
+        {
+            width: 90%!important;
+        }
+        .button_container
+        {
+            width: 90%!important;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        .register_card
+        {
+            width: 100%;
+        }
+    }
+    
 }
 
