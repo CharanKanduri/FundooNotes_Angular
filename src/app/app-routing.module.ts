@@ -4,6 +4,7 @@ import { RegisterComponent } from './Component/Register/register/register.compon
 import{LoginComponent} from './Component/Login/login/login.component';
 import {ForgetPasswordComponent} from './Component/Forgot-password/forget-password/forget-password.component';
 import { ResetPasswordComponent } from './Component/Reset-password/reset-password/reset-password.component';
+import { DashboardComponent } from './Component/Dash-Board/dashboard/dashboard.component';
 var token:any;
 token = localStorage.getItem('token');
 const routes: Routes = [
@@ -13,7 +14,9 @@ const routes: Routes = [
   },
   {path:'ForgetPassword',component:ForgetPasswordComponent
   },
-  {path:`ResetPassword/${token}`,component:ResetPasswordComponent}
+  {path:`ResetPassword/${token}`,component:ResetPasswordComponent
+  },
+  {path:'dashboard',component:DashboardComponent}
 
 ];
 
