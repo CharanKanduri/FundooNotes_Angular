@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class HttpServiceService {
 
   constructor(private http:HttpClient) { }
-  post(url:string,data:any=null,isHeaderRequired:any=false,headers=null)
+  post(url:string,data:any=null,isHeaderRequired:any=false,headers:any=null)
   {
     console.log(url,data+"value");
     return this.http.post(url,data,isHeaderRequired && headers)

@@ -9,14 +9,14 @@ $hintSize:12px;
     
 }   
 .alert-message
-{
+{   padding-top: 12px;
     font-size: 13px;
 }
 .register_card
 {
     display: flex;
     flex-wrap: wrap;
-    width: 49%;
+    width: 55%;
     border:0.5px solid #DDDFE2;
     min-height: 500px;
 
@@ -36,7 +36,7 @@ $hintSize:12px;
             font-family:Arial, Helvetica, sans-serif;   
         }
         mat-form-field{
-            font-size: 8px;
+            font-size: 12px;
             input{
                 padding: 3px;
             }
@@ -65,6 +65,7 @@ $hintSize:12px;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
+            margin-bottom: -10px;
         }
         .register-form
         {
@@ -90,7 +91,7 @@ $hintSize:12px;
         }
         
     }
-    @media only screen and (max-width: 880px) {
+        @media only screen and (max-width: 880px) {
         .register_card
         {
             width: 40%;
@@ -128,4 +129,3 @@ $hintSize:12px;
     }
     
 }
-

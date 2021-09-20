@@ -36,7 +36,7 @@ import {MatMenuModule} from '@angular/material/menu';
  
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
