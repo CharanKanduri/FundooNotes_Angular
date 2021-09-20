@@ -1,0 +1,63 @@
+<div class="home_container">
+    <mat-toolbar>
+        <div class="logo">
+            <button mat-icon-button class="icon-button">
+                <mat-icon class="menu-icon">menu</mat-icon>
+            </button>
+            <span>
+                <img src="../../../../assets/dashboard/index.jpg" style="width: 35px;
+                height: 35px; margin-right: 20px; padding-top: 10px;" alt="logo" />
+            </span>
+            <span>
+                <span style="color: #4285F4;">F</span>
+                <span style="color: #EA4335;">u</span>
+                <span style="color: #FBBC05;">n</span>
+                <span style="color: #4285F4;">d</span>
+                <span style="color: #34A853;">o</span>
+                <span style="color: #EB4E41;">o</span>
+            </span>
+        </div>
+        <div>
+        <mat-form-field class="example-full-width" appearance="fill" [style.width.px]=600>
+            <input matInput placeholder="Search" >
+            <mat-icon matPrefix [style.margin-right.px]=12>search</mat-icon>
+          </mat-form-field>
+        </div>
+        <div>
+            <span class="example-spacer"></span>
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                <mat-icon>view_agenda</mat-icon>
+            </button>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+                <mat-icon>supervised_user_circle</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar>
+    <mat-sidenav-container class="main">
+        <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="side_nav" >
+            <mat-nav-list>
+                <mat-list-item>
+                  <mat-icon mat-list-icon class="sidenavLogo">lightbulb_outline</mat-icon>
+                  <h4 mat-line>Notes</h4>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon class="sidenavLogo">notifications_none</mat-icon>
+                    <h4 mat-line>Reminders</h4>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">edit</mat-icon>
+                    <h4 mat-line>Edit labels</h4>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">archive</mat-icon>
+                    <h4 mat-line>Archive</h4>
+                </mat-list-item>
+                <mat-list-item>
+                    <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">delete</mat-icon>
+                    <h4 mat-line>Trash</h4>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>Main content</mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

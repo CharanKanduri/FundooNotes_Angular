@@ -17,15 +17,15 @@
           <mat-form-field appearance="outline">
             <mat-label>User name</mat-label>
             <input type="email" matInput id="email" formControlName ="email" >
-            <mat-error *ngIf="LoginForm.controls['email'].invalid">value is required</mat-error>
+            <mat-error *ngIf="LoginForm.controls['email'].invalid" style="padding: 15px; margin-left: -20px;">value is required</mat-error>
           </mat-form-field>
         </div>
 
         <div>
           <mat-form-field appearance="outline">
               <mat-label>Password</mat-label>
-              <input [type]="fieldTextType ? 'text' : 'password'" matInput id="password" formControlName ="password" required>
-              <mat-error *ngIf="LoginForm.controls['password'].invalid">value is required</mat-error>
+              <input [type]="fieldTextType ? 'text' : 'password'" matInput id="password" formControlName ="password" >
+              <mat-error *ngIf="LoginForm.controls['password'].invalid" style="padding: 15px; margin-left: -20px;">value is required</mat-error>
             </mat-form-field>
           <mat-checkbox class="check-box" id="showPassword" style="margin-right: 225px;" (click) ="toggleFieldTextType()">Show Password</mat-checkbox>
           <br>
