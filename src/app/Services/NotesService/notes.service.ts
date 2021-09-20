@@ -13,6 +13,6 @@ export class NotesService {
   };
   CreateNote(data: any)
   {
-    return this.httpService.post(`${environment.baseUrl}/api/register`, data, true, this.header);
+    return this.httpService.post(`${environment.baseUrl}/api/CreateNote`, data, true, this.header);
   }
 }

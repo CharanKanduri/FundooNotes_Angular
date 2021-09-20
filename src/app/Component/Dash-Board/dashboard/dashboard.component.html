@@ -1,7 +1,7 @@
 <div class="home_container">
     <mat-toolbar>
         <div class="logo">
-            <button mat-icon-button class="icon-button">
+            <button mat-icon-button class="icon-button" (click)="sidenav.toggle()" >
                 <mat-icon class="menu-icon">menu</mat-icon>
             </button>
             <span>
@@ -28,9 +28,17 @@
             <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
                 <mat-icon>view_agenda</mat-icon>
             </button>
-            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with share icon">
                 <mat-icon>supervised_user_circle</mat-icon>
             </button>
+            <mat-menu #menu="matMenu" class="profileMenu">
+                <img src="../../../../assets/dashboard/profilePicture.jpg" alt="Profile picture" class="profilePic">
+                <h1>Charan</h1>
+                <p>Charan@gmail.com</p>
+                <mat-divider style="margin-top: 20px;"></mat-divider>
+                <button mat-stroked-button style="margin:10px 0">Sign out</button>
+                <mat-divider></mat-divider>
+            </mat-menu>
         </div>
     </mat-toolbar>
     <mat-sidenav-container class="main">
@@ -58,6 +66,8 @@
                 </mat-list-item>
             </mat-nav-list>
         </mat-sidenav>
-        <mat-sidenav-content>Main content</mat-sidenav-content>
+        <mat-sidenav-content class="mainContent">
+            <app-add-note></app-add-note>
+        </mat-sidenav-content>
     </mat-sidenav-container>
 </div>
