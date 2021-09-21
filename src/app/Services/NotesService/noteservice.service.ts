@@ -5,14 +5,16 @@ import { HttpServiceService } from '../HttpService/http-service.service';
 @Injectable({
   providedIn: 'root'
 })
-export class NotesService {
+export class NoteserviceService {
 
+  userDetails= JSON.parse(localStorage.getItem('UserDetails')!);
   constructor(private httpService: HttpServiceService) { }
   header ={
-    Headers:{Authorization: "Bearer " + localStorage.getItem('token')}
+    Headers:{Authorization: "Bearer " + this.userDetails.Token}
   };
   CreateNote(data: any)
-  {
+  { data.UserId= this.userDetails.UserId;
     return this.httpService.post(`${environment.baseUrl}/api/CreateNote`, data, true, this.header);
   }
+
 }

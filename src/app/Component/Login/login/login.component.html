@@ -35,7 +35,7 @@
         </div>
         <div class="button_container">
           <button [routerLink]="['/register']" mat-button color="primary">Create Account</button>
-          <button mat-raised-button color="primary" (click)="Login()">login</button>
+          <button mat-raised-button color="primary" (click)="Login()"[routerLink]="['/dashboard']" >login</button>
         </div>
 
       </form>

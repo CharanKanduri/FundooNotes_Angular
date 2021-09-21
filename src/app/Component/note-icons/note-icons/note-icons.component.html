@@ -1,0 +1,35 @@
+<div class="icons">
+    <button mat-icon-button class="example-icon favorite-icon" >
+        <mat-icon mat-list-icon class= "material-icons-outlined"  [matMenuTriggerFor]="reminderMenu" >add_alert</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" >
+        <mat-icon mat-list-icon class= "material-icons-outlined">person_add</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" >
+        <mat-icon mat-list-icon class= "material-icons-outlined">color_lens</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" >
+        <mat-icon mat-list-icon class= "material-icons-outlined">image</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" >
+        <mat-icon mat-list-icon class= "material-icons-outlined">archive</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" [matMenuTriggerFor]="labelMenu" >
+        <mat-icon mat-list-icon class= "material-icons-outlined">more_vert</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" >
+        <mat-icon mat-list-icon class= "material-icons-outlined">redo</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon favorite-icon" >
+        <mat-icon mat-list-icon class= "material-icons-outlined">undo</mat-icon>
+    </button>
+    <button mat-button color="primary" (click)="Close()">Close</button>
+</div>
+<mat-menu #labelMenu="matMenu" class="note_menu">
+    <button mat-menu-item>Add Label</button>
+</mat-menu>
+<mat-menu #reminderMenu="matMenu" class="note_menu">
+    <button mat-menu-item>Today</button>
+    <button mat-menu-item>Tommorow</button>
+    <button mat-menu-item>Next Week</button>
+</mat-menu>

@@ -23,7 +23,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav'; 
 import {MatListModule} from '@angular/material/list';
-import { AddNoteComponent } from './Component/add-note/add-note/add-note.component'; 
+import { AddNoteComponent } from './Component/add-note/add-note/add-note.component';
+import { NoteIconsComponent } from './Component/note-icons/note-icons/note-icons.component'; 
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -37,6 +39,7 @@ import { AddNoteComponent } from './Component/add-note/add-note/add-note.compone
     ResetPasswordComponent,
     DashboardComponent,
     AddNoteComponent,
+    NoteIconsComponent,
  
   ],
   imports: [
@@ -56,9 +59,9 @@ import { AddNoteComponent } from './Component/add-note/add-note/add-note.compone
     MatDividerModule,
     MatMenuModule,
     MatSidenavModule,
-    MatListModule
-    
-    
+    MatListModule,
+    MatDialogModule
+
   ],
 
   providers: [],

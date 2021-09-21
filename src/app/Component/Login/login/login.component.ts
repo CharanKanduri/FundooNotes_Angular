@@ -25,8 +25,6 @@ export class LoginComponent implements OnInit {
     this.userService.Login(this.LoginForm.value)
     .subscribe((result:any)=>{
       console.log(result);
-      localStorage.setItem('token',result.jwtToken);
-      localStorage.setItem('userDetails',JSON.stringify(result.userData));
         this.snackBar.open(`${result.message}`, '', {
           duration: 3000,
           verticalPosition: 'bottom',
@@ -34,7 +32,15 @@ export class LoginComponent implements OnInit {
         });
         if(result.status == true)
         {
-          this.router.navigate(['/login']);
+          var params={
+            UserId:result.loginData.userId,
+            FirstName:result.loginData.firstName,
+            LastName:result.loginData.lastName,
+            Email:result.loginData.email,
+            Token:result.data
+          }        
+          localStorage.setItem('UserDetails',JSON.stringify(params));
+          this.router.navigate(['/dashboard']);
         }
     },error => {  
       this.snackBar.open(`${error.error.message}`, '', {
