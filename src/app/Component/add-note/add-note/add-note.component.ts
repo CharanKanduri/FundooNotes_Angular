@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
-import { UserServiceService } from 'src/app/Services/UserService/user-service.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-note',
@@ -10,10 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-note.component.scss']
 })
 export class AddNoteComponent implements OnInit {
-  smallNote:boolean = true;
-  bigNote:boolean = false;
+  show:boolean = true;
+  noteColor = "white";
+  pin:boolean=false;
+  isReminder=false;
+  Reminder="";
   NoteForm !: FormGroup;
-  constructor() { }
+  constructor(private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.NoteForm = new FormGroup({
@@ -21,10 +22,12 @@ export class AddNoteComponent implements OnInit {
       Description:new FormControl()
     });
   }
-  showNote()
-  {
-    this.smallNote = false;
-    this.bigNote = true;
+  changePin(){
+    this.pin = !this.pin;
   }
-
+  RemoveReminder()
+  {
+    this.isReminder = false;
+    this.snackBar.open('Reminder Deleted', '', { duration: 3000,verticalPosition: 'bottom',horizontalPosition: 'left'});
+  }
 }

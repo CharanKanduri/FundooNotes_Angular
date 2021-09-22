@@ -17,9 +17,6 @@ export class NoteIconsComponent implements OnInit {
   }
   Close()
   {
-    this.addNote.bigNote = false;
-    this.addNote.smallNote=true;
-    localStorage.clear();
     this.noteService.CreateNote(this.addNote.NoteForm.value)
     .subscribe((result:any)=>{
       this.snackBar.open(`${result.message}`, '', {
