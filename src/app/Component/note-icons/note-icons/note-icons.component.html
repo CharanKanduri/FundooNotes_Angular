@@ -15,7 +15,7 @@
         <button mat-icon-button class="example-icon favorite-icon" matTooltip="Add Image">
             <mat-icon mat-list-icon class="material-icons-outlined">image</mat-icon>
         </button>
-        <button mat-icon-button class="example-icon favorite-icon" matTooltip="Archive">
+        <button mat-icon-button class="example-icon favorite-icon" matTooltip="Archive" (click)="archiveNote()">
             <mat-icon mat-list-icon class="material-icons-outlined" *ngIf="!archive">archive</mat-icon>
             <mat-icon mat-list-icon *ngIf="archive">archive</mat-icon>
         </button>

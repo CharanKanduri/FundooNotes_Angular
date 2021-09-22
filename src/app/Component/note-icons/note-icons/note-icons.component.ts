@@ -133,5 +133,14 @@ export class NoteIconsComponent implements OnInit {
     this.addNote.isReminder = true;
     this.addNote.Reminder = `${rem.Text} ${rem.Time}`
   }
+  archiveNote()
+  {
+    this.snackBar.open(`${this.archive?'Note Unarchived':'Note Archived'}`, '', {
+        duration: 2000,
+        verticalPosition: 'bottom',
+        horizontalPosition: 'left'
+      });
+    this.archive=!this.archive;
+  }
 
 }

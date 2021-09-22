@@ -27,6 +27,7 @@ import { AddNoteComponent } from './Component/add-note/add-note/add-note.compone
 import { NoteIconsComponent } from './Component/note-icons/note-icons/note-icons.component'; 
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { CollaboratorComponent } from './Component/collaborator/collaborator/collaborator.component';
 
 
 
@@ -41,6 +42,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     DashboardComponent,
     AddNoteComponent,
     NoteIconsComponent,
+    CollaboratorComponent,
  
   ],
   imports: [
