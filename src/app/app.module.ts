@@ -26,6 +26,7 @@ import {MatListModule} from '@angular/material/list';
 import { AddNoteComponent } from './Component/add-note/add-note/add-note.component';
 import { NoteIconsComponent } from './Component/note-icons/note-icons/note-icons.component'; 
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -60,7 +61,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatMenuModule,
     MatSidenavModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTooltipModule
 
   ],
 
