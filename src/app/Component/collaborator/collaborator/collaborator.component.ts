@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-collaborator',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CollaboratorComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private dialogRef: MatDialogRef<CollaboratorComponent>) { }
+  AddCollaboratorForm!: FormGroup;
+ 
   ngOnInit(): void {
+    this.AddCollaboratorForm = new FormGroup({
+      email: new FormControl()
+    });
   }
-
+  close() {
+    this.dialogRef.close();
+}
 }

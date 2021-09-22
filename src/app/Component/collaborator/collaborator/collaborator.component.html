@@ -1,1 +1,31 @@
-<p>collaborator works!</p>
+<div class="mainCollab" style="padding-left: 20px;">
+    <h2 mat-dialog-title>Collaborator</h2>
+    <mat-divider style="margin-top: -15px;"></mat-divider>
+    <mat-dialog-content [formGroup]="AddCollaboratorForm">
+        <div class="collaborators">
+            <div class="user">
+                <img src="../../../../assets/dashboard/profilePicture.jpg" alt="profile picture" class="profilePic">
+                <div class="UserName">
+                    <h4 style="height:6px">charan Kanduri<span
+                            style="font-style: italic;font-weight: lighter;">(Owner)</span></h4>
+                    <p>charankanduri@gmail.com</p>
+                </div>
+            </div>
+            <div class="user">
+                <span class="add">
+                    <mat-icon class="addperson">person_add</mat-icon>
+                </span>
+                <input placeholder="Person or email to share with" formControlName="email" class="person">
+            </div>
+        </div>
+
+    </mat-dialog-content>
+</div>
+<div >
+    <mat-dialog-actions [style.width.%]="100">
+        <div class="action_buttons">
+            <button mat-button style="color: #454545;" (click)="close()">Close</button>
+            <button mat-button style="color: #454545;">Save</button>
+        </div>
+    </mat-dialog-actions>
+</div>

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteserviceService } from 'src/app/Services/NotesService/noteservice.service';
 import { AddNoteComponent } from '../../add-note/add-note/add-note.component';
-import { MatDialog} from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { CollaboratorComponent } from '../../collaborator/collaborator/collaborator.component';
 
 @Component({
   selector: 'app-note-icons',
@@ -100,9 +101,9 @@ export class NoteIconsComponent implements OnInit {
       Title:this.addNote.NoteForm.value.Title,
       Description:this.addNote.NoteForm.value.Description,
       Color:noteColor,
-      Reminder:noteReminder,
+      RemindMe:noteReminder,
       Pin:this.addNote.pinned,
-      Archive:this.archive
+      Archieve:this.archive
     }
     this.noteService.CreateNote(data)
       .subscribe((result: any) => {
@@ -133,6 +134,15 @@ export class NoteIconsComponent implements OnInit {
     this.addNote.isReminder = true;
     this.addNote.Reminder = `${rem.Text} ${rem.Time}`
   }
+  openDialog() {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(CollaboratorComponent, dialogConfig);
+  }
   archiveNote()
   {
     this.snackBar.open(`${this.archive?'Note Unarchived':'Note Archived'}`, '', {
@@ -142,5 +152,4 @@ export class NoteIconsComponent implements OnInit {
       });
     this.archive=!this.archive;
   }
-
 }
