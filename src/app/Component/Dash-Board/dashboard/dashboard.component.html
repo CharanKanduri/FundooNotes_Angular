@@ -36,7 +36,7 @@
                 <h1>Charan</h1>
                 <p>Charan@gmail.com</p>
                 <mat-divider style="margin-top: 20px;"></mat-divider>
-                <button mat-stroked-button style="margin:10px 0">Sign out</button>
+                <button  [routerLink]="['/login']" mat-stroked-button style="margin:10px 0" (click)="signout()">Sign out</button>
                 <mat-divider></mat-divider>
             </mat-menu>
         </div>
