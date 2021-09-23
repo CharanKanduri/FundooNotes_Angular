@@ -60,7 +60,7 @@
                     <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">archive</mat-icon>
                     <h4 mat-line>Archive</h4>
                 </mat-list-item>
-                <mat-list-item>
+                <mat-list-item (click)="choice = 'trash'" >
                     <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">delete</mat-icon>
                     <h4 mat-line>Trash</h4>
                 </mat-list-item>
@@ -78,6 +78,9 @@
         </div>
         <div class="get_notes" *ngIf = "choice == 'archive'">
              <app-archive-notes></app-archive-notes>   
+        </div>
+        <div class="get_notes" *ngIf = "choice == 'trash'">
+            <app-trash-notes></app-trash-notes>
         </div>
         </mat-sidenav-content>
     </mat-sidenav-container>

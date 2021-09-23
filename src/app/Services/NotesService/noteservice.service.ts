@@ -28,4 +28,8 @@ export class NoteserviceService {
     let data = this.userDetails.UserId;
     return this.httpService.post(`${environment.baseUrl}/api/GetAllRemainders?userId=${data}`, null, true, this.header);
   }
+  TrashNotes()
+  {let data = this.userDetails.UserId;
+    return this.httpService.post(`${environment.baseUrl}/api/GetFromTrash?userId=${data}`, null, true, this.header);
+  }
 }

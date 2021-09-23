@@ -32,6 +32,7 @@ import { GetnoteComponent } from './Component/get-note/getnote/getnote.component
 import { GetNoteIconsComponent } from './Component/get-note-icons/get-note-icons/get-note-icons.component';
 import { ArchiveNotesComponent } from './Component/Archive-notes/archive-notes/archive-notes.component';
 import { ReminderNotesComponent } from './Component/Reminder-notes/reminder-notes/reminder-notes.component';
+import { TrashNotesComponent } from './Component/Trash-notes/trash-notes/trash-notes.component';
 
 
 
@@ -51,6 +52,7 @@ import { ReminderNotesComponent } from './Component/Reminder-notes/reminder-note
     GetNoteIconsComponent,
     ArchiveNotesComponent,
     ReminderNotesComponent,
+    TrashNotesComponent,
  
   ],
   imports: [
