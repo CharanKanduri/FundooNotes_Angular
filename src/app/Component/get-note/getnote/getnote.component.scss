@@ -1,12 +1,11 @@
 .notes
 {
-    margin-left: 100px;
+    margin-left: 75px;
     margin-top: 30px;
  } 
 ::ng-deep .getNoteCard
 {
-    display: flex;
-    flex-direction: column;
+    //chnge
     width:200px;
     max-height: 500px;
     min-height: 95px;
@@ -48,4 +47,4 @@
 .cursor:hover
 {
     cursor: pointer;
-} 
+}

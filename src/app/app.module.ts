@@ -29,6 +29,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { CollaboratorComponent } from './Component/collaborator/collaborator/collaborator.component';
 import { GetnoteComponent } from './Component/get-note/getnote/getnote.component';
+import { GetNoteIconsComponent } from './Component/get-note-icons/get-note-icons/get-note-icons.component';
 
 
 
@@ -45,6 +46,7 @@ import { GetnoteComponent } from './Component/get-note/getnote/getnote.component
     NoteIconsComponent,
     CollaboratorComponent,
     GetnoteComponent,
+    GetNoteIconsComponent,
  
   ],
   imports: [

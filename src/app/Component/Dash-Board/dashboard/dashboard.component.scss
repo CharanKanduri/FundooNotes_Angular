@@ -56,8 +56,10 @@
       }
       mat-sidenav-content{
           display: flex;
+          flex-flow: column;
           justify-content:center;
-          align-items: center;
+          align-items:center;
+          
       }
       .sidenavLogo
       {
@@ -77,6 +79,7 @@
       .mainContent
       {
           margin-left: -250px;
+          
       }
     
     
