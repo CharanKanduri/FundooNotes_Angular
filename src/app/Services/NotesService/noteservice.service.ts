@@ -24,4 +24,8 @@ export class NoteserviceService {
    {let data = this.userDetails.UserId;
     return this.httpService.post(`${environment.baseUrl}/api/GetFromArchieve?userId=${data}`, null, true, this.header);
   }
+  ReminderNotes() {
+    let data = this.userDetails.UserId;
+    return this.httpService.post(`${environment.baseUrl}/api/GetAllRemainders?userId=${data}`, null, true, this.header);
+  }
 }

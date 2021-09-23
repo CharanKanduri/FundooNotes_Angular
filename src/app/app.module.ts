@@ -31,6 +31,7 @@ import { CollaboratorComponent } from './Component/collaborator/collaborator/col
 import { GetnoteComponent } from './Component/get-note/getnote/getnote.component';
 import { GetNoteIconsComponent } from './Component/get-note-icons/get-note-icons/get-note-icons.component';
 import { ArchiveNotesComponent } from './Component/Archive-notes/archive-notes/archive-notes.component';
+import { ReminderNotesComponent } from './Component/Reminder-notes/reminder-notes/reminder-notes.component';
 
 
 
@@ -49,6 +50,7 @@ import { ArchiveNotesComponent } from './Component/Archive-notes/archive-notes/a
     GetnoteComponent,
     GetNoteIconsComponent,
     ArchiveNotesComponent,
+    ReminderNotesComponent,
  
   ],
   imports: [

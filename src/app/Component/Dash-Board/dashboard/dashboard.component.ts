@@ -27,4 +27,8 @@ export class DashboardComponent implements OnInit {
     this.choice = 'Reminder';
     console.log(this.choice);
   }
+  Refresh()
+  {
+    window.location.reload();
+  }
 }

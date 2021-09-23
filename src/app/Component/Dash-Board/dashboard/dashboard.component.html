@@ -44,11 +44,11 @@
     <mat-sidenav-container class="main">
         <mat-sidenav #sidenav mode="side" [(opened)]="opened" class="side_nav" >
             <mat-nav-list>
-                <mat-list-item>
+                <mat-list-item (click)="Refresh()">
                   <mat-icon mat-list-icon class="sidenavLogo">lightbulb_outline</mat-icon>
                   <h4 mat-line>Notes</h4>
                 </mat-list-item>
-                <mat-list-item>
+                <mat-list-item (click)="choice = 'Reminder'">
                     <mat-icon mat-list-icon class="sidenavLogo">notifications_none</mat-icon>
                     <h4 mat-line>Reminders</h4>
                 </mat-list-item>
@@ -72,6 +72,9 @@
         </div>
         <div class="get_notes" *ngIf = "choice == 'getnotes' || choice == ''">
             <app-getnote></app-getnote>
+        </div>
+        <div class="get_notes" *ngIf = "choice == 'Reminder'">
+            <app-reminder-notes></app-reminder-notes>
         </div>
         <div class="get_notes" *ngIf = "choice == 'archive'">
              <app-archive-notes></app-archive-notes>   
