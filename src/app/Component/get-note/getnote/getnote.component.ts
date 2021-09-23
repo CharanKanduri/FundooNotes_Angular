@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Injectable, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {NoteserviceService} from 'src/app/Services/NotesService/noteservice.service';
-
+@Injectable({
+  providedIn:'root'
+})
 @Component({
   selector: 'app-getnote',
   templateUrl: './getnote.component.html',

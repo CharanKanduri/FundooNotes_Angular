@@ -8,6 +8,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class DashboardComponent implements OnInit {
   opened: boolean = true;
+  choice:string='';
   constructor(private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
@@ -20,5 +21,10 @@ export class DashboardComponent implements OnInit {
       verticalPosition: 'bottom',
       horizontalPosition: 'left'
     });
+  }
+  Remind()
+  {
+    this.choice = 'Reminder';
+    console.log(this.choice);
   }
 }

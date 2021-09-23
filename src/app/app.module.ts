@@ -30,6 +30,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { CollaboratorComponent } from './Component/collaborator/collaborator/collaborator.component';
 import { GetnoteComponent } from './Component/get-note/getnote/getnote.component';
 import { GetNoteIconsComponent } from './Component/get-note-icons/get-note-icons/get-note-icons.component';
+import { ArchiveNotesComponent } from './Component/Archive-notes/archive-notes/archive-notes.component';
 
 
 
@@ -47,6 +48,7 @@ import { GetNoteIconsComponent } from './Component/get-note-icons/get-note-icons
     CollaboratorComponent,
     GetnoteComponent,
     GetNoteIconsComponent,
+    ArchiveNotesComponent,
  
   ],
   imports: [

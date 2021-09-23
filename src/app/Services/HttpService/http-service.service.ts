@@ -18,4 +18,10 @@ export class HttpServiceService {
     console.log(url,data+"value");
     return this.http.put(url,data,isHeaderRequired && headers)
   }
+  get(url:string,data:any=null,isHeaderRequired:any=false,headers:any=false)
+  {
+    console.log("httpservice",url,data);
+    console.log(url,data+"value");
+    return this.http.get(url,headers);
+  }
 }

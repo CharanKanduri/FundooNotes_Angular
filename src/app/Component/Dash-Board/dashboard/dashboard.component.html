@@ -56,7 +56,7 @@
                     <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">edit</mat-icon>
                     <h4 mat-line>Edit labels</h4>
                 </mat-list-item>
-                <mat-list-item>
+                <mat-list-item (click)="choice = 'archive'">
                     <mat-icon mat-list-icon class="sidenavLogo material-icons-outlined">archive</mat-icon>
                     <h4 mat-line>Archive</h4>
                 </mat-list-item>
@@ -70,8 +70,11 @@
         <div class="mainContent">
             <app-add-note></app-add-note>
         </div>
-        <div class="get_notes">
+        <div class="get_notes" *ngIf = "choice == 'getnotes' || choice == ''">
             <app-getnote></app-getnote>
+        </div>
+        <div class="get_notes" *ngIf = "choice == 'archive'">
+             <app-archive-notes></app-archive-notes>   
         </div>
         </mat-sidenav-content>
     </mat-sidenav-container>

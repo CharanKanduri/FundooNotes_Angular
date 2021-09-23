@@ -1,0 +1,90 @@
+.notes{
+    margin-left: 20px;
+    border-radius: 15px;
+}
+ .allNotes
+ {
+     display: flex;
+     flex-flow: column wrap;
+     margin-left: 100px;
+     margin-right: 20px;
+     margin-top: 50px;
+ }
+ .displayRow
+ {
+     display: flex;
+     flex-flow: row wrap;
+ }
+ ::ng-deep .getIcons
+ {
+     padding: 0;
+ }
+::ng-deep .getNoteCard
+{ 
+    width:220px;
+    max-height: 1000px;
+    min-height: 95px;
+    border-radius: 13px!important;
+    align-items: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    border: 1px solid #E0E0E0 ;
+}
+
+::ng-deep .card_title
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    word-wrap:break-word;
+    justify-content: space-between;
+    width: 100%;
+}
+::ng-deep .noteDescription
+{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap !important;
+    overflow: hidden;
+    
+}
+.reminderLabel
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #EBEBEB;
+    font-size: 10px;
+    width: fit-content;
+    max-height: 25px;
+    border-radius: 15px;
+    margin-left: 2px;
+    p{
+        margin-top: 10px;
+    }
+    mat-icon{
+        font-size: 17px;
+        margin-left: 3px;
+        margin-top: 5px;
+    }
+}
+.cursor:hover
+{
+    cursor: pointer;
+}
+
+.noteDescription{
+    
+    overflow: hidden !important;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+.pinLabel{
+    color: #5f6368;
+    letter-spacing: .07272727em;
+    font-family: Roboto,Arial,sans-serif;
+    font-size: .6875rem;
+    font-weight: 500;
+    line-height: 1rem;
+}
