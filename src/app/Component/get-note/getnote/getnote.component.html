@@ -1,31 +1,73 @@
-<div style="display: flex; flex: row; flex-wrap: wrap;"  >
-    <div class="notes" *ngFor="let note of userNotes">
-        <mat-card (mouseenter)='hovered=true' (mouseleave)='hovered=false' class="getNoteCard" [style.background-color]="note.color">
-            <div>
-                <mat-card-title>
-                    <div class="card_title">
-                        <div id="noteTitle" class="noteTitle">
-                            <h2>{{note.title}}</h2>
-                        </div>
-                    </div>
-                </mat-card-title>
-                <mat-card-content class="card_title">
-                    <div id="noteDescription" class="noteDescription">
-                        <p>{{note.description}}</p>
-                    </div>
-                </mat-card-content>
-                <mat-card-footer>
-                    <span *ngIf="isReminder" class="reminderLabel">
-                        <mat-icon mat-list-icon class="material-icons-outlined">watch_later</mat-icon>
-                        <p>{{note.Reminder}}</p>
-                        <mat-icon mat-list-icon class="material-icons-outlined cursor" (click)="RemoveReminder()">close
-                        </mat-icon>
-                    </span>
+<h2 class="Title" *ngIf="isPin">Pinned</h2>
+<div class="all-notes">
+    <div style="display: flex; flex: row; flex-wrap: wrap;"  >
+        <div class="notes" *ngFor="let note of userNotes">
+            <div class="notes" *ngIf="note.pin && isPin" id={{note.noteId}}>
+                <mat-card (mouseenter)='hovered=true' (mouseleave)='hovered=false' class="getNoteCard" [style.background-color]="note.color">
                     <div>
-                        <app-get-note-icons></app-get-note-icons>
+                        <mat-card-title>
+                            <div class="card_title">
+                                <div id="noteTitle" class="noteTitle" (click)="openDialog(note)">
+                                    <h2>{{note.title}}</h2>
+                                </div>
+                            </div>
+                        </mat-card-title>
+                        <mat-card-content class="card_title">
+                            <div id="noteDescription" class="noteDescription" (click)="openDialog(note)">
+                                <p>{{note.description}}</p>
+                            </div>
+                        </mat-card-content>
+                        <mat-card-footer>
+                            <span *ngIf="isReminder" class="reminderLabel">
+                                <mat-icon mat-list-icon class="material-icons-outlined">watch_later</mat-icon>
+                                <p>{{note.Reminder}}</p>
+                                <mat-icon mat-list-icon class="material-icons-outlined cursor" (click)="RemoveReminder()">close
+                                </mat-icon>
+                            </span>
+                            <div>
+                                <app-get-note-icons [note]="note"></app-get-note-icons>
+                            </div>
+                        </mat-card-footer>
                     </div>
-                </mat-card-footer>
+                </mat-card>
             </div>
-        </mat-card>
-    </div>
-    </div>
+        </div>
+        </div>
+</div>
+<br>
+<h2 class="Title" *ngIf="isPin">Other</h2>
+<div class="all-notes">
+    <div style="display: flex; flex: row; flex-wrap: wrap;">
+        <div class="notes" *ngFor="let note of userNotes">
+           <div class="notes" *ngIf="!note.pin" id={{note.noteId}}>
+            <mat-card (mouseenter)='hovered=true' (mouseleave)='hovered=false' class="getNoteCard" [style.background-color]="note.color">
+                <div>
+                    <mat-card-title>
+                        <div class="card_title">
+                            <div id="noteTitle" class="noteTitle" (click)="openDialog(note)"  >
+                                <h2>{{note.title}}</h2>
+                            </div>
+                        </div>
+                    </mat-card-title>
+                    <mat-card-content class="card_title">
+                        <div id="noteDescription" class="noteDescription" (click)="openDialog(note)">
+                            <p>{{note.description}}</p>
+                        </div>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <span *ngIf="isReminder" class="reminderLabel">
+                            <mat-icon mat-list-icon class="material-icons-outlined">watch_later</mat-icon>
+                            <p>{{note.Reminder}}</p>
+                            <mat-icon mat-list-icon class="material-icons-outlined cursor" (click)="RemoveReminder()">close
+                            </mat-icon>
+                        </span>
+                        <div>
+                            <app-get-note-icons  [note]="note"></app-get-note-icons>
+                        </div>
+                    </mat-card-footer>
+                </div>
+            </mat-card>
+           </div>
+        </div>
+        </div>
+</div>

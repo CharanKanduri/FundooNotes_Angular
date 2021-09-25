@@ -20,10 +20,10 @@
     mat-card{
         display: flex;
         flex-direction: row;
-        min-width:525px;
+        min-width:505px;
         align-items: center;
         border-radius: 10px;
-        margin-top: 25px;
+        height: 100%;
         form{
             width: 100%;
         }
@@ -32,30 +32,13 @@
     .mat-card:not([class*=mat-elevation-z]) {
         box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
     }
-    .small-card-title{
-        font-size: 13px;
-        flex-grow: 12;
-        height: 10px!important;
-        input{
-            outline: none;
-            height: 100%;
-            border: none;
-            font-size: 13px;
-        }
-    }
-    .bigCard
-    {
-        display: flex;
-        flex-direction: column;
-        background-color: #F28B82;
-    }
     .textarea
     {
         border: none;
         font-size: 16px;
         margin-left: 0px;
         outline: none;
-        font-family: 'Times New Roman', Times, serif;
+        width: 100%;
     }
     .big-card-title
     {
@@ -86,6 +69,7 @@
         width: fit-content;
         max-height: 25px;
         border-radius: 15px;
+        margin-left: 14px;
         p{
             margin-top: 10px;
         }
@@ -98,4 +82,17 @@
 .cursor:hover
 {
     cursor: pointer;
-} 
+}  
+.foot
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}  
+::ng-deep .dialog-container-custom .mat-dialog-container 
+{
+    border-radius: 7px;
+    padding: 0px 0px 0px 0px!important;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+}

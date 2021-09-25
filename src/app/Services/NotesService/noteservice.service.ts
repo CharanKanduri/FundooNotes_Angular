@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpServiceService } from '../HttpService/http-service.service';
+import { HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class NoteserviceService {
   { data.UserId= this.userDetails.UserId;
     return this.httpService.post(`${environment.baseUrl}/api/CreateNote`, data, true, this.header);
   }
-  GetNote(){
+  GetNotes(){
     let data = this.userDetails.UserId;
     return this.httpService.post(`${environment.baseUrl}/api/GetNotes?userId=${data}`,null,true,this.header);
   }
@@ -32,4 +33,14 @@ export class NoteserviceService {
   {let data = this.userDetails.UserId;
     return this.httpService.post(`${environment.baseUrl}/api/GetFromTrash?userId=${data}`, null, true, this.header);
   }
+  UpdateNote(note:any)
+  {
+    return this.httpService.post(`${environment.baseUrl}/api/Update`,note,true, this.header);
+  }
+  MoveToTrash(id:any)
+  {
+    let params = new HttpParams().set('noteId',id);
+    return this.httpService.post(`${environment.baseUrl}/api/IsDelete`,params,true,this.header);
+  }
+  
 }

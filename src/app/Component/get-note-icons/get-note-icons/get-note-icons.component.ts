@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {GetnoteComponent} from 'src/app/Component/get-note/getnote/getnote.component'
+import { NoteserviceService } from 'src/app/Services/NotesService/noteservice.service';
+
+
 
 @Component({
   selector: 'app-get-note-icons',
@@ -9,11 +12,21 @@ import {GetnoteComponent} from 'src/app/Component/get-note/getnote/getnote.compo
 })
 export class GetNoteIconsComponent implements OnInit {
   archive = false;
-  constructor(private getNote:GetnoteComponent,private snackBar: MatSnackBar) { }
+  constructor(private getNote:GetnoteComponent,private snackBar: MatSnackBar,private noteService:NoteserviceService) { }
+  
+  @Input() note: any;
+  id:any;
+
   reminders: any[] = [{"Text": "Later Today","Time":"1:00"},{"Text": "Tommorow","Time":"8:00"},{"Text": "Next Week","Time":"mon,9:00"}];
   colors: any[] = [{ "color": "#fff", "toolTip": "default", "check": true },{"color": "#F28B82","toolTip": "Red","check": false},{"color": "#FFF475","toolTip": "Yellow","check": false},{"color": "#FBBC04","toolTip": "Orange","check": false},{"color": "#CCFF90","toolTip": "Green","check": false},{"color": "#AECBFA","toolTip": "Dark Blue","check": false},{"color": "#CBF0F8","toolTip": "Blue","check": false},{"color": "#E6C9A8","toolTip": "Brown","check": false}];
 
   ngOnInit(): void {
+    this.getIcon();
+  }
+  getIcon()
+  {
+    for (var val of this.colors)
+      val.icon = val.color == this.note.color ? true : false;
   }
   AddReminder(rem: any) {
     this.getNote.isReminder = true;
@@ -24,6 +37,10 @@ export class GetNoteIconsComponent implements OnInit {
     for (var val of this.colors)
       val.icon = val.color == color ? true : false;
   }
+  moveToTrash()
+  {
+    this.noteService.MoveToTrash(this.note.notesId).subscribe();
+  }
   archiveNote()
   {
     this.snackBar.open(`${this.archive?'Note Unarchived':'Note Archived'}`, '', {
@@ -33,6 +50,4 @@ export class GetNoteIconsComponent implements OnInit {
       });
     this.archive=!this.archive;
   }
-
-
 }
